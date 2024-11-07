@@ -1,13 +1,13 @@
-import {apiClient} from '@utils/ApiClient.js';
+import {post, get} from '../utils/ApiClient.js';
 
-const sampleGet = (params) => {
-    return apiClient.get('/api/hello', { ...params })
+export function sampleGet(params) {
+    return get('/api/hello', { ...params })
         .then((res) => res.data.body)
         .catch((res) => console.log('res', res));
 };
 
-const samplePost = (params) => {
-    return apiClient.post('/api/hello', { ...params })
+export function samplePost(params){
+    return post('/api/hello', {...params})
         .then((res) => res.data.body)
         .catch((res) => console.log('res', res));
 };

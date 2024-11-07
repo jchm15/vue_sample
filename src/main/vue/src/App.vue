@@ -1,7 +1,20 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HelloWorld from './components/HelloWorld.vue';
 import { RouterView } from 'vue-router';
+
+import { onMounted } from "vue";
+import {samplePost} from "./api/sampleService.js";
+
+
+onMounted(async () => {
+    let param = {
+        id: "hm",
+        name: "name",
+        content: "vue"
+    }
+    let rtn = await samplePost(param);
+    console.log(rtn)
+})
 </script>
 
 <template>
