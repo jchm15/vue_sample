@@ -8,10 +8,6 @@ const sampleGet = (params) => {
 
 const samplePost = (params) => {
     return apiClient.post('/api/hello', { ...params })
-        .then((res) => res)
-        .catch((res) => {
-            if(res.response.data.message === 'duplicated Medicine') {
-                alert("중복");
-            }
-        });
+        .then((res) => res.data.body)
+        .catch((res) => console.log('res', res));
 };
