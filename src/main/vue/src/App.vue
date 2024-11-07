@@ -8,9 +8,9 @@ import {samplePost} from "./api/sampleService.js";
 
 onMounted(async () => {
     let param = {
-        id: "hm",
-        name: "name",
-        content: "vue"
+        id: "hm123",
+        name: "name123",
+        content: "vue123"
     }
     let rtn = await samplePost(param);
     console.log(rtn)
