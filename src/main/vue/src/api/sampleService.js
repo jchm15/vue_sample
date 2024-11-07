@@ -1,14 +1,13 @@
 import {apiClient} from '@utils/ApiClient.js';
 
-let url = "";
 const sampleGet = (params) => {
-    return apiClient.get(url, { ...params })
+    return apiClient.get('/api/hello', { ...params })
         .then((res) => res.data.body)
         .catch((res) => console.log('res', res));
 };
 
 const samplePost = (params) => {
-    return apiClient.post(url, { ...params })
+    return apiClient.post('/api/hello', { ...params })
         .then((res) => res)
         .catch((res) => {
             if(res.response.data.message === 'duplicated Medicine') {
