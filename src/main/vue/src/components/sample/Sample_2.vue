@@ -25,7 +25,7 @@
 
 <script setup>
 import { useSampleStore } from "@/stores/sample2/sampleStore";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 const list = ref([]);
 const store = useSampleStore();
@@ -39,6 +39,11 @@ onMounted(() => {
     const addData = { content1: "content1", content2: "content2", content3: "content3" };
     store.addList(addData);
 
+    list.value = store.getDataAll;
+})
+
+onUnmounted(() => {
+    store.flushList();
     list.value = store.getDataAll;
 })
 </script>
