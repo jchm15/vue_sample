@@ -1,21 +1,25 @@
 import { createWebHistory, createRouter } from "vue-router";
 
+import App from '@/App.vue';
+import Index from '@components/Index.vue';
+import Sample1 from '@/components/sample/Sample_1.vue';
+
 const routes = [
-    // {
-    //     path: "/",
-    //     name: "Home",
-    //     component: () => import("./views/Home.vue"),
-    // },
-    // {
-    //     path: "/test",
-    //     name: "Test",
-    //     component: () => import("./views/Test.vue"),
-    // },
+    {
+        path: "/",
+        name: "Index",
+        component: Index,
+    },
+    {
+        path: "/sample1",
+        name: "sample1",
+        component: Sample1,
+    },
 ];
 
-const index = createRouter({
+const router = createRouter({
     history: createWebHistory(),
     routes,
 });
 
-export default index;
+export default router;

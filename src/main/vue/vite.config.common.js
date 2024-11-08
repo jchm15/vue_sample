@@ -23,6 +23,10 @@ export default {
                 find: '@api',
                 replacement: resolve(__dirname, 'src/api'),
             },
+            {
+                find: '@css',
+                replacement: resolve(__dirname, 'src/css'),
+            },
         ],
     },
 };
